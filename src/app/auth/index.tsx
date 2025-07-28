@@ -50,7 +50,7 @@ const Login = () => {
               errors,
               touched,
             }) => (
-              <View style={tw`px-4 py-6 flex-1`}>
+              <View style={tw`px-5 py-6 flex-1`}>
                 <View style={tw`items-center gap-10`}>
                   <View style={tw`items-center gap-7`}>
                     <Image
@@ -127,7 +127,13 @@ const Login = () => {
                     </View>
 
                     {/* Login Button */}
-                    <TButton onPress={handleSubmit} title="Login" />
+                    <TButton
+                      onPress={() => {
+                        // handleSubmit();
+                        // router.push("/auth/home");
+                      }}
+                      title="Login"
+                    />
                   </View>
                 </View>
               </View>

@@ -157,7 +157,13 @@ const Register = () => {
                   </View>
 
                   {/* Register Button */}
-                  <TButton onPress={handleSubmit} title="Register" />
+                  <TButton
+                    onPress={() => {
+                      // handleSubmit();
+                      router.push("/auth/otp_verification");
+                    }}
+                    title="Register"
+                  />
                 </View>
 
                 {/* Bottom Login Link */}

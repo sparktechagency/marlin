@@ -30,7 +30,8 @@ const Splash = () => {
     // Navigate to the home screen after a delay
     SplashScreen.hideAsync();
     const timer = setTimeout(() => {
-      router.push("/auth/greeting");
+      // router.push("/auth/greeting");
+      router.push("/home");
     }, 1000);
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount

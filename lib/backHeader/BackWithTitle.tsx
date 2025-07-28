@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 
 import React from "react";
 import { SvgXml } from "react-native-svg";
@@ -25,14 +25,25 @@ const BackWithTitle = ({
       onPress={onPress}
       style={[tw`flex-row items-center gap-3 p-[4%]`, containerStyle]}
     >
-      <SvgXml
-        xml={`<svg width="13" height="20" viewBox="0 0 13 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.3333 20.0834L0.75 10.5L10.3333 0.916687L12.0344 2.61773L4.15208 10.5L12.0344 18.3823L10.3333 20.0834Z" fill="white"/>
+      <View
+        style={tw`bg-[#3D3D3D] w-12 h-12 justify-center items-center rounded-full`}
+      >
+        <SvgXml
+          xml={`<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.477124 9.99984L9.69575 18L12 16.0003L3.9335 9L12 1.99969L9.69575 0L0.477124 8.00016C0.171621 8.26536 0 8.625 0 9C0 9.375 0.171621 9.73464 0.477124 9.99984Z" fill="white"/>
 </svg>
 
-        `}
-      />
-      <Text style={[tw`text-white50 font-RobotoBold text-base`, titleStyle]}>
+
+
+`}
+        />
+      </View>
+      <Text
+        style={[
+          tw`text-white50 font-DegularDisplaySemibold text-xl `,
+          titleStyle,
+        ]}
+      >
         {title}
       </Text>
     </TouchableOpacity>

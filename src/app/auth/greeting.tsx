@@ -9,7 +9,7 @@ import tw from "@/lib/tailwind";
 
 const Splash = () => {
   return (
-    <View style={tw`flex-1 bg-black px-4`}>
+    <View style={tw`flex-1 bg-black px-5`}>
       <ScrollView contentContainerStyle={tw`pb-4`}>
         <View style={tw`flex-1 bg-black relative`}>
           <View style={tw` pb-11 pt-20 gap-4 `}>
