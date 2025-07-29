@@ -2,18 +2,18 @@ import * as Yup from "yup";
 
 import { Image, Text, TouchableOpacity, View } from "react-native";
 
-import BackButton from "@/lib/backHeader/BackButton";
-import CheckBox from "@/lib/inputs/CheckBox";
-import { Formik } from "formik";
 import { Icon } from "@/assets/Icon";
 import { ImageAssets } from "@/assets/images/image";
-import InputText from "@/lib/inputs/InputText";
-import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-import React from "react";
-import { SvgXml } from "react-native-svg";
+import BackButton from "@/lib/backHeader/BackButton";
 import TButton from "@/lib/buttons/TButton";
-import { router } from "expo-router";
+import CheckBox from "@/lib/inputs/CheckBox";
+import InputText from "@/lib/inputs/InputText";
 import tw from "@/lib/tailwind";
+import { router } from "expo-router";
+import { Formik } from "formik";
+import React from "react";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
+import { SvgXml } from "react-native-svg";
 
 const Login = () => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -130,7 +130,7 @@ const Login = () => {
                     <TButton
                       onPress={() => {
                         // handleSubmit();
-                        // router.push("/auth/home");
+                        router.push("/home");
                       }}
                       title="Login"
                     />

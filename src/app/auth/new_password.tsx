@@ -2,16 +2,16 @@ import * as Yup from "yup";
 
 import { Image, Text, View } from "react-native";
 
-import BackButton from "@/lib/backHeader/BackButton";
 import { Icon } from "@/assets/Icon";
 import { ImageAssets } from "@/assets/images/image";
-import InputText from "@/lib/inputs/InputText";
-import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
-import React from "react";
+import BackButton from "@/lib/backHeader/BackButton";
 import TButton from "@/lib/buttons/TButton";
-import { router } from "expo-router";
+import InputText from "@/lib/inputs/InputText";
 import tw from "@/lib/tailwind";
+import { router } from "expo-router";
 import { useFormik } from "formik";
+import React from "react";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 
 const ChangePass = () => {
   const formik = useFormik({
@@ -100,6 +100,7 @@ const ChangePass = () => {
               // formik.handleSubmit();
               // router?.dismiss();
               // Navigate to the change password modal
+              // router.push("/auth");
               router.push("/auth/change_pass_modal");
             }}
             containerStyle={tw`bg-primary  h-12 justify-center items-center`}

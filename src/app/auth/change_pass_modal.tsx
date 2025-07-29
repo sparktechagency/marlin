@@ -1,12 +1,12 @@
 import { Pressable, Text, View } from "react-native";
 
-import { BlurView } from "expo-blur";
 import { Icon } from "@/assets/Icon";
+import TButton from "@/lib/buttons/TButton";
+import tw from "@/lib/tailwind";
+import { BlurView } from "expo-blur";
+import { router } from "expo-router";
 import React from "react";
 import { SvgXml } from "react-native-svg";
-import TButton from "@/lib/buttons/TButton";
-import { router } from "expo-router";
-import tw from "@/lib/tailwind";
 
 const change_pass_modal = () => {
   return (

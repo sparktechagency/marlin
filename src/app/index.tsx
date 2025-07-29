@@ -1,6 +1,6 @@
 import * as Font from "expo-font";
-import * as React from "react";
 import * as SplashScreen from "expo-splash-screen";
+import * as React from "react";
 
 import { ActivityIndicator, Image, Pressable, View } from "react-native";
 
