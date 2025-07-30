@@ -10,7 +10,7 @@ import {
   View,
 } from "react-native";
 // Importing necessary packages and components
-import React, { forwardRef, useRef } from "react";
+import React, { useRef } from "react";
 
 // Defining the props for RBSheet
 interface RBSheetProps {
@@ -32,7 +32,7 @@ interface RBSheetProps {
   children?: React.ReactNode;
 }
 
-const BottomModal = forwardRef(
+const BottomModal = React.forwardRef(
   (
     {
       height = 260,
@@ -193,7 +193,7 @@ const styles = StyleSheet.create({
     backgroundColor: "transparent",
   },
   container: {
-    backgroundColor: "#fff",
+    backgroundColor: "transparent",
     width: "100%",
     height: 0,
     overflow: "hidden",

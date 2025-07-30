@@ -21,11 +21,11 @@ const BackButton = ({
     <TouchableOpacity
       activeOpacity={0.5}
       onPress={onPress}
-      style={[tw` flex-row pl-4 items-center gap-2  `, containerStyle]}
+      style={[tw` flex-row pl-4 items-center gap-2 `, containerStyle]}
     >
       <TouchableOpacity
         onPress={onPress}
-        style={tw`flex-row items-center gap-4 `}
+        style={tw`flex-row items-center gap-3 `}
       >
         <View
           style={tw`bg-[#3D3D3D] w-12 h-12 justify-center items-center rounded-full`}

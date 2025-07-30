@@ -1,37 +1,16 @@
-import {
-  Alert,
-  Image,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { router, useLocalSearchParams } from "expo-router";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
 import { ImageAssets } from "@/assets/images/image";
+import IwtButton from "@/lib/buttons/IwtButton";
 import tw from "@/lib/tailwind";
 import { RandomImage } from "@/src/utils/utils";
 import React from "react";
 import { SvgXml } from "react-native-svg";
 
 const Index = () => {
-  const handleCreateSnowflake = () => {
-    Alert.alert("Create Snowflake", "Navigating to snowflake creation screen.");
-    // Implement navigation logic here, e.g., navigation.navigate('CreateSnowflake');
-  };
-
-  const handleCreateLetteredShadow = () => {
-    Alert.alert(
-      "Create Lettered Shadow",
-      "Navigating to lettered shadow creation screen."
-    );
-    // Implement navigation logic here
-  };
-
-  const handleInputLocation = () => {
-    Alert.alert("Input Location", "Navigating to location input screen.");
-    // Implement navigation logic here
-  };
+  const { snow, location, lettered } = useLocalSearchParams();
 
   return (
     <View style={tw`flex-1 bg-black`}>
@@ -85,10 +64,19 @@ const Index = () => {
         <View
           style={tw`flex-1 px-4 flex-row  gap-2  justify-center items-center`}
         >
-          <SvgXml xml={Icon.steps} />
+          {location ? (
+            <SvgXml xml={Icon.steps3} />
+          ) : lettered ? (
+            <SvgXml xml={Icon.steps2} />
+          ) : snow ? (
+            <SvgXml xml={Icon.steps1} />
+          ) : (
+            <SvgXml xml={Icon.steps} />
+          )}
 
           <View style={tw`flex-1 w-full gap-3`}>
             <TouchableOpacity
+              onPress={() => router.push("/profile_setup/create_snowflake")}
               style={tw`flex-row bg-secondary p-2  rounded-xl  justify-between `}
             >
               <View style={tw`flex-1 flex-row items-center gap-3`}>
@@ -109,6 +97,9 @@ const Index = () => {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
+              onPress={() =>
+                router.push("/profile_setup/create_lettered_shadow")
+              }
               style={tw`flex-row bg-secondary p-2  rounded-xl  justify-between `}
             >
               <View style={tw`flex-1 flex-row items-center gap-3`}>
@@ -129,6 +120,7 @@ const Index = () => {
               </View>
             </TouchableOpacity>
             <TouchableOpacity
+              onPress={() => router.push("/profile_setup/input_your_location")}
               style={tw`flex-row bg-secondary p-2  rounded-xl  justify-between `}
             >
               <View style={tw`flex-1 flex-row items-center gap-3`}>
@@ -150,6 +142,16 @@ const Index = () => {
             </TouchableOpacity>
           </View>
         </View>
+        {lettered && location && snow && (
+          <View style={tw`py-2 px-4 my-8`}>
+            <IwtButton
+              svg={Icon.gohomepgaeLogo}
+              svg2={Icon.array_go}
+              title="Go to HOME page"
+              // onPress={() => router.push("/home")}
+            />
+          </View>
+        )}
       </ScrollView>
     </View>
   );

@@ -1,30 +1,33 @@
-import { KeyboardProvider } from "react-native-keyboard-controller";
-import { SafeAreaView } from "react-native";
 import { Stack } from "expo-router";
+import { SafeAreaView } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { KeyboardProvider } from "react-native-keyboard-controller";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 export default function RootLayout() {
   const { top, bottom } = useSafeAreaInsets();
   return (
-    <KeyboardProvider>
-      <SafeAreaView
-        style={{
-          flex: 1,
-          paddingTop: top,
-          paddingBottom: bottom,
-          backgroundColor: "black",
-        }}
-      >
-        <Stack
-          screenOptions={{
-            headerShown: false,
-            statusBarAnimation: "fade",
-            statusBarStyle: "light",
+    <GestureHandlerRootView>
+      <KeyboardProvider>
+        <SafeAreaView
+          style={{
+            flex: 1,
+            paddingTop: top,
+            paddingBottom: bottom,
+            backgroundColor: "black",
           }}
         >
-          <Stack.Screen name="index" />
-          <Stack.Screen name="auth" />
-        </Stack>
-      </SafeAreaView>
-    </KeyboardProvider>
+          <Stack
+            screenOptions={{
+              headerShown: false,
+              statusBarAnimation: "fade",
+              statusBarStyle: "light",
+            }}
+          >
+            <Stack.Screen name="index" />
+            <Stack.Screen name="auth" />
+          </Stack>
+        </SafeAreaView>
+      </KeyboardProvider>
+    </GestureHandlerRootView>
   );
 }

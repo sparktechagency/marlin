@@ -1,3 +1,4 @@
+import React, { useCallback } from "react";
 import {
   Animated,
   Easing,
@@ -9,7 +10,6 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useCallback } from "react";
 
 import { SvgXml } from "react-native-svg";
 import tw from "../tailwind";
