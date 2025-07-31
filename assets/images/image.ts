@@ -1,4 +1,13 @@
 export const ImageAssets = {
   logo: require("./logo.png"),
   homePageLogo: require("./homePageLogo.png"),
+  option1: require("./option1.png"),
+  option2: require("./option2.png"),
+  option3: require("./option3.png"),
+  option4: require("./option4.png"),
+  option5: require("./option5.png"),
+  option6: require("./option6.png"),
+  option7: require("./option7.png"),
+  option8: require("./option8.png"),
+  option9: require("./option9.png"),
 };

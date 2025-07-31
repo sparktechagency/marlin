@@ -1,13 +1,13 @@
-import { router, useLocalSearchParams } from "expo-router";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import { router, useLocalSearchParams } from "expo-router";
 
 import { Icon } from "@/assets/Icon";
 import { ImageAssets } from "@/assets/images/image";
 import IwtButton from "@/lib/buttons/IwtButton";
-import tw from "@/lib/tailwind";
 import { RandomImage } from "@/src/utils/utils";
 import React from "react";
 import { SvgXml } from "react-native-svg";
+import tw from "@/lib/tailwind";
 
 const Index = () => {
   const { snow, location, lettered } = useLocalSearchParams();
@@ -148,7 +148,7 @@ const Index = () => {
               svg={Icon.gohomepgaeLogo}
               svg2={Icon.array_go}
               title="Go to HOME page"
-              // onPress={() => router.push("/home")}
+              onPress={() => router.push("/home")}
             />
           </View>
         )}
