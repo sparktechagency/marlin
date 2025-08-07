@@ -1,55 +1,65 @@
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
-import HomeHeader from "@/src/components/HomeHeader";
 import { ImageAssets } from "@/assets/images/image";
-import React from "react";
 import tw from "@/lib/tailwind";
+import HomeHeader from "@/src/components/HomeHeader";
+import { router } from "expo-router";
+import React from "react";
 
 const options = [
   {
     id: 1,
     name: "First Debt",
     image: ImageAssets.option1,
+    route: "first_debt",
   },
   {
     id: 2,
     name: "Incometude",
     image: ImageAssets.option2,
+    route: "incometude",
   },
   {
     id: 3,
     name: "Snowflake & L.Shadow",
     image: ImageAssets.option3,
+    route: "snowflake",
   },
   {
     id: 4,
     name: "3 Fields",
     image: ImageAssets.option4,
+    route: "three_fields",
   },
   {
     id: 5,
     name: "HOME",
     image: ImageAssets.option5,
+    route: "app_home",
   },
   {
     id: 6,
     name: "LIFE",
     image: ImageAssets.option6,
+    route: "life",
   },
   {
     id: 7,
     name: "3G HEAD & HOME",
     image: ImageAssets.option7,
+    route: "three_g_head",
   },
   {
     id: 8,
     name: "3 class profile",
     image: ImageAssets.option8,
+    route: "three_class_profile",
   },
   {
     id: 9,
     name: "GDPxExchange",
     image: ImageAssets.option9,
+    route: "gdp_exchange",
   },
 ];
 
@@ -65,6 +75,7 @@ const index = () => {
           >
             {options.map((item, index) => (
               <TouchableOpacity
+                onPress={() => router.push(`/home/${item.route}`)}
                 key={index}
                 style={[
                   tw`  h-38 justify-start border border-secondary 
@@ -91,7 +102,7 @@ const index = () => {
                 >
                   <Text
                     numberOfLines={1}
-                    style={tw`self-stretch text-center text-white text-lg font-normal leading-tight`}
+                    style={tw` px-2 self-stretch text-center text-white text-lg font-normal leading-tight`}
                   >
                     {item.name}
                   </Text>
