@@ -4,6 +4,7 @@ import { Icon } from "@/assets/Icon";
 import { RandomImage } from "../utils/utils";
 import React from "react";
 import { SvgXml } from "react-native-svg";
+import { router } from "expo-router";
 import tw from "@/lib/tailwind";
 
 interface HomeHeaderProps {
@@ -40,7 +41,7 @@ const HomeHeader = ({ offMenu }: HomeHeaderProps) => {
           <TouchableOpacity
             style={tw`px-3 py-3 `}
             onPress={() => {
-              // router.back();
+              router.push("/home/menu_modal");
             }}
           >
             <SvgXml width={25} height={25} xml={Icon.menu} />

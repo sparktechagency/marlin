@@ -9,6 +9,7 @@ const Layout = () => {
         name="menu_modal"
         options={{
           presentation: "transparentModal",
+          animation: "fade_from_bottom",
         }}
       />
     </Stack>

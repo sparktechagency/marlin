@@ -1,10 +1,10 @@
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
-import tw from "@/lib/tailwind";
-import { router } from "expo-router";
 import React from "react";
 import { SvgXml } from "react-native-svg";
+import { router } from "expo-router";
+import tw from "@/lib/tailwind";
 
 interface Props {
   title?: string;
@@ -13,7 +13,7 @@ interface Props {
 const ModalHeader = ({ title }: Props) => {
   return (
     <View
-      style={tw`bg-primary flex-row h-12 items-center justify-between px-4`}
+      style={tw`bg-primary flex-row h-13 items-center justify-between px-4`}
     >
       <View />
       <Text style={tw`text-white text-base`}>{title}</Text>
