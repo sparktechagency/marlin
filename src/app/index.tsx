@@ -31,7 +31,7 @@ const Splash = () => {
     SplashScreen.hideAsync();
     const timer = setTimeout(() => {
       // router.push("/auth/greeting");
-      router.push("/home/app_home");
+      router.push("/home/incometude");
     }, 1000);
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount

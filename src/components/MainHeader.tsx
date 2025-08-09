@@ -14,22 +14,26 @@ interface MainHeaderProps {
 
 const MainHeader = ({ endComponent, onPress, title }: MainHeaderProps) => {
   return (
-    <View style={tw` flex-row items-center h-18  px-4 py-3 justify-between`}>
+    <View style={tw` flex-row items-center h-20  px-4 py-3 justify-between`}>
       <View style={tw`flex-1 flex-row items-center gap-3`}>
         <TouchableOpacity
           onPress={() => {
             router.push("/home");
           }}
         >
-          <SvgXml height={50} width={50} xml={Icon.home} />
+          <SvgXml height={45} width={45} xml={Icon.home} />
         </TouchableOpacity>
         {title ? (
           <Text style={tw`text-white text-lg font-DegularDisplayMedium`}>
             {title}
           </Text>
         ) : (
-          <TouchableOpacity>
-            <SvgXml height={50} width={50} xml={Icon.main_home} />
+          <TouchableOpacity
+            onPress={() => {
+              router.push("/home/app_home");
+            }}
+          >
+            <SvgXml height={45} width={45} xml={Icon.main_home} />
           </TouchableOpacity>
         )}
       </View>

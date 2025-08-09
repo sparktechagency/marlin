@@ -1,11 +1,13 @@
-import { Text, View } from "react-native";
+import { View } from "react-native";
 
+import tw from "@/lib/tailwind";
+import MainHeader from "@/src/components/MainHeader";
 import React from "react";
 
 const incometude = () => {
   return (
-    <View>
-      <Text>incometude</Text>
+    <View style={tw`flex-1 bg-black`}>
+      <MainHeader />
     </View>
   );
 };
