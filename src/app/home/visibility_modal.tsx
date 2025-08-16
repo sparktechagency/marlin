@@ -18,13 +18,13 @@ const Visibility_modal = () => {
       id: 1,
       title: "Public",
       icon: Icon.eartchBlue,
-      onPress: () => router.push("/profile_setup"),
+      onPress: () => router.push("/home/incometude?visibility=public"),
     },
     {
       id: 2,
       title: "Private",
       icon: Icon.lockBlue,
-      onPress: () => router.push("/profile_setup"),
+      onPress: () => router.push("/home/incometude?visibility=private"),
     },
   ];
 

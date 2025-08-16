@@ -15,7 +15,7 @@ import { SvgXml } from "react-native-svg";
 const incometude = () => {
   return (
     <View style={tw`flex-1 bg-black`}>
-      <KeyboardAwareScrollView>
+      <KeyboardAwareScrollView contentContainerStyle={tw`pb-10`}>
         <MainHeader
           endComponent={
             <IwtButton
@@ -127,7 +127,7 @@ const incometude = () => {
 
         {[...Array(4)]?.map((item, i) => {
           return (
-            <View key={i} style={tw`py-4`}>
+            <View key={i} style={tw`py-3`}>
               <ImageBackground
                 style={tw`h-72 w-full justify-between`}
                 source={ImageAssets.mountend}
@@ -144,7 +144,7 @@ const incometude = () => {
                   <Text
                     style={tw`text-black text-xl font-DegularDisplaySemibold `}
                   >
-                    Alisa Doe
+                    Alisa Doe {i + 1}
                   </Text>
                 </View>
                 <View
@@ -159,8 +159,8 @@ const incometude = () => {
 
                 <BlurView
                   tint="default"
-                  blurReductionFactor={20}
-                  intensity={40}
+                  blurReductionFactor={8}
+                  intensity={80}
                   experimentalBlurMethod="none"
                   style={tw`w-full h-10 shadow-md flex-row justify-center items-center `}
                 />
