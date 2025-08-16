@@ -21,6 +21,14 @@ const Layout = () => {
           animation: "fade_from_bottom",
         }}
       />
+      <Stack.Screen
+        name="visibility_modal"
+        options={{
+          presentation: "formSheet",
+          sheetAllowedDetents: "fitToContents",
+          contentStyle: { backgroundColor: "black" },
+        }}
+      />
     </Stack>
   );
 };

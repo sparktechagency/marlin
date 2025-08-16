@@ -10,4 +10,5 @@ export const ImageAssets = {
   option7: require("./option7.png"),
   option8: require("./option8.png"),
   option9: require("./option9.png"),
+  mountend: require("./mountend.jpg"),
 };
