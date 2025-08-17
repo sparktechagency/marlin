@@ -26,7 +26,7 @@ const BackWithComponent = ({
   return (
     <View
       style={[
-        tw`flex-row items-center justify-between gap-2 px-[4%] `,
+        tw`flex-row items-center justify-between gap-2 `,
         containerStyle,
         {
           paddingTop: Platform.OS === "android" ? 5 : 0,
@@ -39,16 +39,17 @@ const BackWithComponent = ({
           {!offBack ? (
             <TouchableOpacity
               onPress={onPress}
-              style={tw`flex-row items-center gap-2 pr-4`}
+              style={tw`flex-row items-center gap-3 `}
             >
               <View
-                style={tw`bg-primary w-10 h-10 justify-center items-center rounded-lg`}
+                style={tw`bg-[#3D3D3D] w-12 h-12 justify-center items-center rounded-full`}
               >
                 <SvgXml
-                  xml={`<svg width="35" height="35" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="36" height="36" rx="6" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.3976 18.8888L21.0798 26L23 24.2225L16.2779 18L23 11.7775L21.0798 10L13.3976 17.1113C13.143 17.347 13 17.6667 13 18C13 18.3333 13.143 18.653 13.3976 18.8888Z" fill="#4B5320"/>
+                  xml={`<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.477124 9.99984L9.69575 18L12 16.0003L3.9335 9L12 1.99969L9.69575 0L0.477124 8.00016C0.171621 8.26536 0 8.625 0 9C0 9.375 0.171621 9.73464 0.477124 9.99984Z" fill="white"/>
 </svg>
+
+
 
 `}
                 />
@@ -59,7 +60,10 @@ const BackWithComponent = ({
           )}
           <Text
             numberOfLines={1}
-            style={[tw`text-white font-PoppinsBold text-base`, titleStyle]}
+            style={[
+              tw`text-white font-DegularDisplayRegular text-base`,
+              titleStyle,
+            ]}
           >
             {title}
           </Text>
@@ -68,30 +72,37 @@ const BackWithComponent = ({
         <>
           {!offBack ? (
             <TouchableOpacity
+              activeOpacity={0.5}
               onPress={onPress}
-              style={tw`flex-row items-center gap-2 pr-4`}
+              style={[tw` flex-row pl-4 items-center gap-2 `, containerStyle]}
             >
-              <View
-                style={tw`bg-white w-8 h-8 justify-center items-center rounded-lg`}
+              <TouchableOpacity
+                onPress={onPress}
+                style={tw`flex-row items-center gap-3 `}
               >
-                <SvgXml
-                  xml={`<svg width="20" height="20" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="36" height="36" rx="6" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M13.3976 18.8888L21.0798 26L23 24.2225L16.2779 18L23 11.7775L21.0798 10L13.3976 17.1113C13.143 17.347 13 17.6667 13 18C13 18.3333 13.143 18.653 13.3976 18.8888Z" fill="#4B5320"/>
+                <View
+                  style={tw`bg-[#3D3D3D] w-12 h-12 justify-center items-center rounded-full`}
+                >
+                  <SvgXml
+                    xml={`<svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M0.477124 9.99984L9.69575 18L12 16.0003L3.9335 9L12 1.99969L9.69575 0L0.477124 8.00016C0.171621 8.26536 0 8.625 0 9C0 9.375 0.171621 9.73464 0.477124 9.99984Z" fill="white"/>
 </svg>
 
+
+
 `}
-                />
-              </View>
-              <Text
-                numberOfLines={1}
-                style={[
-                  tw`text-white  font-DegularDisplaySemibold text-lg`,
-                  titleStyle,
-                ]}
-              >
-                {title ? title : "Back"}
-              </Text>
+                  />
+                </View>
+                <Text
+                  numberOfLines={1}
+                  style={[
+                    tw`text-white  font-DegularDisplayRegular text-base`,
+                    titleStyle,
+                  ]}
+                >
+                  {title ? title : null}
+                </Text>
+              </TouchableOpacity>
             </TouchableOpacity>
           ) : (
             <View style={tw`w-10 h-10`} />

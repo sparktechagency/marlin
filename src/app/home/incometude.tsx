@@ -1,16 +1,16 @@
 import { Image, ImageBackground, Text, TextInput, View } from "react-native";
 
+import { BlurView } from "expo-blur";
 import { Icon } from "@/assets/Icon";
 import { ImageAssets } from "@/assets/images/image";
-import IwtButton from "@/lib/buttons/IwtButton";
 import InputText from "@/lib/inputs/InputText";
-import tw from "@/lib/tailwind";
-import MainHeader from "@/src/components/MainHeader";
-import { BlurView } from "expo-blur";
-import { router } from "expo-router";
-import React from "react";
+import IwtButton from "@/lib/buttons/IwtButton";
 import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
+import MainHeader from "@/src/components/MainHeader";
+import React from "react";
 import { SvgXml } from "react-native-svg";
+import { router } from "expo-router";
+import tw from "@/lib/tailwind";
 
 const incometude = () => {
   return (
@@ -19,6 +19,9 @@ const incometude = () => {
         <MainHeader
           endComponent={
             <IwtButton
+              onPress={() => {
+                router.push("/home/rule");
+              }}
               containerStyle={tw`py-0 px-4 h-11 bg-secondary gap-1.5 `}
               title="Rule"
               svgProps={{
