@@ -22,7 +22,7 @@ const incometude = () => {
               onPress={() => {
                 router.push("/home/rule");
               }}
-              containerStyle={tw`py-0 px-4 h-11 bg-secondary gap-1.5 `}
+              containerStyle={tw` px-4 h-11 bg-secondary gap-1.5 `}
               title="Rule"
               svgProps={{
                 height: 15,

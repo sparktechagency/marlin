@@ -69,7 +69,7 @@ const VerifyOtp = () => {
                   onFilled={async (text) => {
                     console.log(`OTP is ${text}`);
 
-                    router.push("/auth/new_password");
+                    router.push("/profile_setup");
                   }}
                   textInputProps={{
                     accessibilityLabel: "One-Time Password",
@@ -77,8 +77,8 @@ const VerifyOtp = () => {
                   theme={{
                     containerStyle: tw`rounded-full px-2 gap-2.5 mb-4`,
                     pinCodeContainerStyle: tw`h-14 w-14 justify-center items-center bg-transparent rounded-full `,
-                    pinCodeTextStyle: tw`text-white text-2xl font-PoppinsBold `,
-                    placeholderTextStyle: tw`text-white text-2xl font-PoppinsBold`,
+                    pinCodeTextStyle: tw`text-white text-2xl font-DegularDisplayBold `,
+                    placeholderTextStyle: tw`text-white text-2xl font-DegularDisplayBold`,
                   }}
                 />
               </View>

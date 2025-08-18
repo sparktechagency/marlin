@@ -1,12 +1,12 @@
 import { Pressable, Text, View } from "react-native";
 
-import { Icon } from "@/assets/Icon";
-import TButton from "@/lib/buttons/TButton";
-import tw from "@/lib/tailwind";
 import { BlurView } from "expo-blur";
-import { router } from "expo-router";
+import { Icon } from "@/assets/Icon";
 import React from "react";
 import { SvgXml } from "react-native-svg";
+import TButton from "@/lib/buttons/TButton";
+import { router } from "expo-router";
+import tw from "@/lib/tailwind";
 
 const change_pass_modal = () => {
   return (
@@ -36,6 +36,7 @@ const change_pass_modal = () => {
             containerStyle={tw`w-full bg-black/80`}
             onPress={() => {
               router?.dismiss();
+              // router.push("/profile_setup");
               router.push("/auth");
             }}
             title="Back to Login"

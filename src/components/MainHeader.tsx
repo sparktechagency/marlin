@@ -22,7 +22,7 @@ const MainHeader = ({
   return (
     <View
       style={[
-        tw` flex-row items-center h-20  px-4 py-3 justify-between`,
+        tw` flex-row items-center    px-4 pt-3 pb-2 mt-3 justify-between`,
         containerStyle,
       ]}
     >

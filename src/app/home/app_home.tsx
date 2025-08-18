@@ -2,12 +2,12 @@ import { ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
 import IwtButton from "@/lib/buttons/IwtButton";
-import TButton from "@/lib/buttons/TButton";
-import tw from "@/lib/tailwind";
 import MainHeader from "@/src/components/MainHeader";
-import { _HIGHT } from "@/src/utils/utils";
 import React from "react";
 import { SvgXml } from "react-native-svg";
+import TButton from "@/lib/buttons/TButton";
+import { _HIGHT } from "@/src/utils/utils";
+import tw from "@/lib/tailwind";
 
 const app_home = () => {
   return (

@@ -1,12 +1,12 @@
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
-import { Icon } from "@/assets/Icon";
 import BackButton from "@/lib/backHeader/BackButton";
+import { Icon } from "@/assets/Icon";
 import IwtButton from "@/lib/buttons/IwtButton";
-import tw from "@/lib/tailwind";
-import { router } from "expo-router";
 import React from "react";
 import { SvgXml } from "react-native-svg";
+import { router } from "expo-router";
+import tw from "@/lib/tailwind";
 
 const Select_snowflake = () => {
   const [snowflake, setSnowflake] = React.useState<any>(Icon.snowfleke1);

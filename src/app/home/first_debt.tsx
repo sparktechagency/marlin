@@ -1,19 +1,11 @@
-import {
-  Image,
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
 import IwtButton from "@/lib/buttons/IwtButton";
 import MainHeader from "@/src/components/MainHeader";
 import React from "react";
 import { SvgXml } from "react-native-svg";
-import tw from "twrnc";
+import tw from "@/lib/tailwind";
 
 // --- Mock Data ---
 // It's better to manage this data in an array to make the component cleaner and easier to update.
@@ -99,11 +91,10 @@ const DataRow = ({ elevation, tier, earnings, highlight, id }) => (
 
 const Taxs = () => {
   // This will hide the status bar for the entire app
-  StatusBar.setHidden(true, "none");
 
   return (
-    <SafeAreaView style={tw`flex-1 bg-black`}>
-      <ScrollView contentContainerStyle={tw`p-4`}>
+    <View style={tw`flex-1 bg-black`}>
+      <ScrollView contentContainerStyle={tw`px-4 pb-8 `}>
         <MainHeader
           endComponent={
             <View>
@@ -187,7 +178,7 @@ const Taxs = () => {
           </View>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 };
 

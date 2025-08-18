@@ -14,7 +14,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import MainHeader from "@/src/components/MainHeader";
 import React from "react";
 import { _HIGHT } from "@/src/utils/utils";
-import tw from "twrnc";
+import tw from "@/lib/tailwind";
 
 // Placeholder for an icon, you can replace this with a real icon library
 const IconPlaceholder = ({ style }) => <View style={style} />;
