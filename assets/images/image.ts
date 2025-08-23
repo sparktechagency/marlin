@@ -12,4 +12,6 @@ export const ImageAssets = {
   option9: require("./option9.png"),
   mountend: require("./mountend.jpg"),
   tower: require("./tower.jpg"),
+  manageLife: require("./manageLife.png"),
+  map: require("./map.png"),
 };

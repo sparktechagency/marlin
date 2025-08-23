@@ -1,6 +1,6 @@
 import * as Font from "expo-font";
-import * as React from "react";
 import * as SplashScreen from "expo-splash-screen";
+import * as React from "react";
 
 import { ActivityIndicator, Image, Pressable, View } from "react-native";
 
@@ -31,7 +31,7 @@ const Splash = () => {
     SplashScreen.hideAsync();
     const timer = setTimeout(() => {
       // router.push("/auth/greeting");
-      router.push("/home");
+      router.push("/home/transfer");
     }, 1000);
 
     return () => clearTimeout(timer); // Cleanup the timer on unmount

@@ -1,3 +1,4 @@
+import { router, useGlobalSearchParams } from "expo-router";
 import { Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
@@ -5,7 +6,6 @@ import BackButton from "@/lib/backHeader/BackButton";
 import IwtButton from "@/lib/buttons/IwtButton";
 import InputText from "@/lib/inputs/InputText";
 import tw from "@/lib/tailwind";
-import { router } from "expo-router";
 import React from "react";
 
 const suggestions = [
@@ -39,7 +39,9 @@ const suggestions = [
   },
 ];
 
-const create_lettered_shadow = () => {
+const Create_lettered_shadow = () => {
+  const params = useGlobalSearchParams();
+  // console.log(params);
   return (
     <View style={tw`flex-1  bg-black`}>
       <BackButton
@@ -88,11 +90,13 @@ const create_lettered_shadow = () => {
         svg={Icon.AIiCOn}
         title="Generate"
         onPress={() => {
-          router.push("/profile_setup/select_lettered");
+          router.push(
+            `/profile_setup/select_lettered?three_g_head=${params?.three_g_head}`
+          );
         }}
       />
     </View>
   );
 };
 
-export default create_lettered_shadow;
+export default Create_lettered_shadow;

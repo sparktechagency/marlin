@@ -1,14 +1,17 @@
+import { router, useGlobalSearchParams } from "expo-router";
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
 import BackButton from "@/lib/backHeader/BackButton";
 import IwtButton from "@/lib/buttons/IwtButton";
 import tw from "@/lib/tailwind";
-import { router } from "expo-router";
 import React from "react";
 import { SvgXml } from "react-native-svg";
 
 const Select_lettered = () => {
+  const params = useGlobalSearchParams();
+  // console.log(params);
+
   const [snowflake, setSnowflake] = React.useState<any>(Icon.demoShadow);
 
   const allSnowflake = [
@@ -69,6 +72,9 @@ const Select_lettered = () => {
           svg={Icon.AIiCOn}
           title="Generate"
           onPress={() => {
+            if (params?.three_g_head) {
+              router.push("/home/three_g_head?three_g_head=true");
+            }
             //   router.push("/profile_setup/select_snowflake");
           }}
         />
