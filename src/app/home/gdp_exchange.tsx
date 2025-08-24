@@ -6,6 +6,7 @@ import IwtButton from "@/lib/buttons/IwtButton";
 import tw from "@/lib/tailwind";
 import MainHeader from "@/src/components/MainHeader";
 import { _HIGHT } from "@/src/utils/utils";
+import { router } from "expo-router";
 import { SvgXml } from "react-native-svg";
 
 const Exchange: FunctionComponent = () => {
@@ -20,7 +21,12 @@ const Exchange: FunctionComponent = () => {
       <MainHeader
         endComponent={
           <View>
-            <Text onPress={() => {}} style={tw`text-white text-base`}>
+            <Text
+              onPress={() => {
+                router.back();
+              }}
+              style={tw`text-white text-base`}
+            >
               GDPxExchange
             </Text>
           </View>
@@ -47,8 +53,14 @@ const Exchange: FunctionComponent = () => {
           containerStyle={tw`bg-transparent w-1/2 flex-1 border border-secondary rounded-xl`}
           title="Transfer"
           svg={Icon?.tansaction}
+          onPress={() => {
+            router.push("/home/transfer");
+          }}
         />
         <IwtButton
+          onPress={() => {
+            router.push("/home/deposit");
+          }}
           containerStyle={tw`bg-transparent border w-1/2 border-secondary rounded-xl`}
           title="Deposit"
           svg={Icon?.download}

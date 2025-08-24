@@ -14,4 +14,6 @@ export const ImageAssets = {
   tower: require("./tower.jpg"),
   manageLife: require("./manageLife.png"),
   map: require("./map.png"),
+  send_money: require("./send_money.png"),
+  profile_shadow: require("./profile_shadow.png"),
 };

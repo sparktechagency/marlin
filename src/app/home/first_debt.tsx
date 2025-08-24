@@ -2,10 +2,10 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 import { Icon } from "@/assets/Icon";
 import IwtButton from "@/lib/buttons/IwtButton";
+import tw from "@/lib/tailwind";
 import MainHeader from "@/src/components/MainHeader";
 import React from "react";
 import { SvgXml } from "react-native-svg";
-import tw from "@/lib/tailwind";
 
 // --- Mock Data ---
 // It's better to manage this data in an array to make the component cleaner and easier to update.

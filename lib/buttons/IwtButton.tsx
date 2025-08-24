@@ -1,10 +1,4 @@
-import {
-  ActivityIndicator,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import { SvgProps, SvgXml } from "react-native-svg";
 
 import React from "react";
@@ -23,6 +17,7 @@ interface IButton {
   loadingColor?: string;
   disabled?: boolean;
   svgProps?: SvgProps;
+  svg2Props?: SvgProps;
 }
 
 const IwtButton = ({
@@ -38,6 +33,7 @@ const IwtButton = ({
   svg2,
   firstSvgTitleTogether,
   svgProps,
+  svg2Props,
 }: IButton) => {
   return (
     <TouchableOpacity
@@ -134,6 +130,7 @@ const IwtButton = ({
      `
             }
             {...svgProps}
+            {...svg2Props}
           />
         )}
       </>
@@ -142,5 +139,3 @@ const IwtButton = ({
 };
 
 export default IwtButton;
-
-const styles = StyleSheet.create({});
