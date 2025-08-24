@@ -1,12 +1,12 @@
 import { FlatList, Text, TouchableOpacity, View } from "react-native";
 
-import BackButton from "@/lib/backHeader/BackButton";
 import { Icon } from "@/assets/Icon";
+import BackButton from "@/lib/backHeader/BackButton";
 import IwtButton from "@/lib/buttons/IwtButton";
+import tw from "@/lib/tailwind";
+import { router } from "expo-router";
 import React from "react";
 import { SvgXml } from "react-native-svg";
-import { router } from "expo-router";
-import tw from "@/lib/tailwind";
 
 const Select_snowflake = () => {
   const [snowflake, setSnowflake] = React.useState<any>(Icon.snowfleke1);
@@ -30,11 +30,7 @@ const Select_snowflake = () => {
         <TouchableOpacity
           activeOpacity={0.5}
           onPress={() =>
-            router.push(
-              `/profile_setup/select_snow_modal?item=${JSON.stringify(
-                snowflake
-              )}`
-            )
+            router.push(`/select_snow_modal?item=${JSON.stringify(snowflake)}`)
           }
           style={tw`border border-secondary p-4 rounded-lg items-center justify-center`}
         >

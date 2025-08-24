@@ -31,6 +31,22 @@ export default function RootLayout() {
           >
             <Stack.Screen name="index" />
             <Stack.Screen name="auth" />
+            <Stack.Screen
+              name="select_snow_modal"
+              options={{
+                presentation: "transparentModal",
+                animation: "slide_from_bottom",
+                // statusBarTranslucent: true,
+              }}
+            />
+            <Stack.Screen
+              name="select_lettered_modal"
+              options={{
+                presentation: "transparentModal",
+                animation: "slide_from_bottom",
+                // statusBarTranslucent: true,
+              }}
+            />
           </Stack>
         </SafeAreaView>
       </KeyboardProvider>

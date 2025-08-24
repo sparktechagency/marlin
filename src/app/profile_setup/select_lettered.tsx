@@ -39,9 +39,7 @@ const Select_lettered = () => {
           activeOpacity={0.5}
           onPress={() =>
             router.push(
-              `/profile_setup/select_lettered_modal?item=${JSON.stringify(
-                snowflake
-              )}`
+              `/select_lettered_modal?item=${JSON.stringify(snowflake)}`
             )
           }
           style={tw`border bg-white border-secondary p-4 pt-6 pb-0 rounded-lg items-center justify-center`}
