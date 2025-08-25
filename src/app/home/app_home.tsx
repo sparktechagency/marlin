@@ -16,7 +16,7 @@ const app_home = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={tw`pb-6`}
       >
-        <MainHeader title="Home" />
+        <MainHeader title="Home" containerStyle={tw`pb-4`} />
         <View style={tw` justify-center items-center bg-black`}>
           <SvgXml height={_HIGHT * 0.274} xml={Icon.main_home_card} />
         </View>

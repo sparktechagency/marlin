@@ -19,7 +19,10 @@ const HomeHeader = ({ offMenu }: HomeHeaderProps) => {
         style={tw`w-full h-24  px-4 flex-row justify-between items-center  bg-secondary rounded-b-[30px]`}
       >
         {/* User Profile Info */}
-        <View style={tw` flex-row justify-start items-center gap-3`}>
+        <TouchableOpacity
+          onPress={() => router.push("/home/profile")}
+          style={tw` flex-row justify-start items-center gap-3`}
+        >
           <Image
             style={tw`w-12 h-12 rounded-full`}
             source={{ uri: RandomImage }}
@@ -36,7 +39,7 @@ const HomeHeader = ({ offMenu }: HomeHeaderProps) => {
               Mark Rohds
             </Text>
           </View>
-        </View>
+        </TouchableOpacity>
         {!offMenu && (
           <TouchableOpacity
             style={tw`px-3 py-3 `}

@@ -1,12 +1,24 @@
 import * as Yup from "yup";
 
-import { Pressable, Text, TextInput, View } from "react-native";
+import { Text, View } from "react-native";
 
-import { useFormik } from "formik";
+import BackButton from "@/lib/backHeader/BackButton";
+import { Icon } from "@/assets/Icon";
+import InputText from "@/lib/inputs/InputText";
+import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import React from "react";
+import TButton from "@/lib/buttons/TButton";
+import { router } from "expo-router";
 import tw from "twrnc";
+import { useFormik } from "formik";
 
 const ChangePass = () => {
+  const [passwordVisible, setPasswordVisible] = React.useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] =
+    React.useState(false);
+  const [currentPasswordVisible, setCurrentPasswordVisible] =
+    React.useState(false);
+
   const formik = useFormik({
     initialValues: {
       currentPassword: "",
@@ -28,67 +40,88 @@ const ChangePass = () => {
   });
 
   return (
-    <View style={tw`flex-1 bg-black px-5 py-8`}>
-      <Text style={tw`text-white text-2xl font-PoppinsMedium mb-8`}>
-        Change Password
-      </Text>
-
-      <View style={tw`mb-4`}>
-        <TextInput
-          style={tw`border border-white/20 text-white h-12 px-4 rounded-lg`}
-          placeholder="Current Password"
-          placeholderTextColor="#ccc"
-          secureTextEntry
-          value={formik.values.currentPassword}
-          onChangeText={formik.handleChange("currentPassword")}
+    <View style={tw`flex-1 bg-black  `}>
+      <KeyboardAwareScrollView contentContainerStyle={tw` px-5 pb-12`}>
+        <BackButton
+          onPress={() => router.back()}
+          title={"Change password"}
+          containerStyle={tw`mt-2`}
         />
-        {formik.touched.currentPassword && formik.errors.currentPassword && (
-          <Text style={tw`text-red-500 text-sm mt-1`}>
-            {formik.errors.currentPassword}
-          </Text>
-        )}
-      </View>
 
-      <View style={tw`mb-4`}>
-        <TextInput
-          style={tw`border border-white/20 text-white h-12 px-4 rounded-lg`}
-          placeholder="New Password"
-          placeholderTextColor="#ccc"
-          secureTextEntry
-          value={formik.values.newPassword}
-          onChangeText={formik.handleChange("newPassword")}
-        />
-        {formik.touched.newPassword && formik.errors.newPassword && (
-          <Text style={tw`text-red-500 text-sm mt-1`}>
-            {formik.errors.newPassword}
-          </Text>
-        )}
-      </View>
+        <View style={tw`gap-4 mt-6`}>
+          <View style={tw``}>
+            <InputText
+              textInputProps={{
+                style: tw`flex-1 text-white text-base font-DegularDisplaySemibold h-12`,
+                placeholder: "Current Password",
+                placeholderTextColor: "#ccc",
+                secureTextEntry: !currentPasswordVisible,
+              }}
+              svgFirstIcon={Icon.lockBlue}
+              svgSecondIcon={Icon.eye}
+              value={formik.values.currentPassword}
+              svgSecondOnPress={() =>
+                setCurrentPasswordVisible(!currentPasswordVisible)
+              }
+              onChangeText={formik.handleChange("currentPassword")}
+            />
+            {formik.touched.currentPassword &&
+              formik.errors.currentPassword && (
+                <Text style={tw`text-red-500 text-sm mt-1`}>
+                  {formik.errors.currentPassword}
+                </Text>
+              )}
+          </View>
 
-      <View style={tw`mb-6`}>
-        <TextInput
-          style={tw`border border-white/20 text-white h-12 px-4 rounded-lg`}
-          placeholder="Confirm Password"
-          placeholderTextColor="#ccc"
-          secureTextEntry
-          value={formik.values.confirmPassword}
-          onChangeText={formik.handleChange("confirmPassword")}
-        />
-        {formik.touched.confirmPassword && formik.errors.confirmPassword && (
-          <Text style={tw`text-red-500 text-sm mt-1`}>
-            {formik.errors.confirmPassword}
-          </Text>
-        )}
-      </View>
-
-      <Pressable
-        style={tw`bg-[#1f8fff] h-12 rounded-full items-center justify-center`}
-        onPress={formik.handleSubmit}
-      >
-        <Text style={tw`text-white text-lg font-PoppinsMedium`}>
-          Change Password
-        </Text>
-      </Pressable>
+          <View style={tw``}>
+            <InputText
+              textInputProps={{
+                style: tw`flex-1 text-white text-base font-DegularDisplaySemibold h-12`,
+                placeholder: "New Password",
+                placeholderTextColor: "#ccc",
+                secureTextEntry: !passwordVisible,
+              }}
+              svgFirstIcon={Icon.lockBlue}
+              svgSecondIcon={Icon.eye}
+              value={formik.values.newPassword}
+              svgSecondOnPress={() => setPasswordVisible(!passwordVisible)}
+              onChangeText={formik.handleChange("newPassword")}
+            />
+            {formik.touched.newPassword && formik.errors.newPassword && (
+              <Text style={tw`text-red-500 text-sm mt-1`}>
+                {formik.errors.newPassword}
+              </Text>
+            )}
+          </View>
+        </View>
+        <View style={tw`pt-4`}>
+          <InputText
+            textInputProps={{
+              style: tw`flex-1 text-white text-base font-DegularDisplaySemibold h-12`,
+              placeholder: "Confirm Password",
+              placeholderTextColor: "#ccc",
+              secureTextEntry: !confirmPasswordVisible,
+            }}
+            svgFirstIcon={Icon.lockBlue}
+            svgSecondIcon={Icon.eye}
+            value={formik.values.confirmPassword}
+            svgSecondOnPress={() =>
+              setConfirmPasswordVisible(!confirmPasswordVisible)
+            }
+            onChangeText={formik.handleChange("confirmPassword")}
+          />
+          {formik.touched.confirmPassword && formik.errors.confirmPassword && (
+            <Text style={tw`text-red-500 text-sm mt-1`}>
+              {formik.errors.confirmPassword}
+            </Text>
+          )}
+        </View>
+      </KeyboardAwareScrollView>
+      <TButton
+        title="Change Password"
+        onPress={() => formik.handleSubmit()}
+        containerStyle={tw` w-[95%] self-center h-14 rounded-full bg-primary justify-center items-center`}
+      />
     </View>
   );
 };

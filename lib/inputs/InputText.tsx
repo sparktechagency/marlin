@@ -1,4 +1,3 @@
-import React, { useCallback } from "react";
 import {
   Animated,
   Easing,
@@ -10,6 +9,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import React, { useCallback } from "react";
 
 import { SvgXml } from "react-native-svg";
 import tw from "../tailwind";
@@ -128,11 +128,11 @@ const InputText = ({
       {label && (
         <Text
           style={[
-            tw`text-base font-DegularDisplayRegular  py-2 text-black`,
+            tw`text-base font-DegularDisplayRegular  py-2 text-white`,
             labelStyle,
           ]}
         >
-          {label}{" "}
+          {label}
           {required && (
             <Text style={tw`text-red-500 font-DegularDisplaySemibold`}> *</Text>
           )}

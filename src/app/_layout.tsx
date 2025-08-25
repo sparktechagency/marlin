@@ -1,7 +1,7 @@
-import { Stack } from "expo-router";
-import { SafeAreaView } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { KeyboardProvider } from "react-native-keyboard-controller";
+import { SafeAreaView } from "react-native";
+import { Stack } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export const unstable_settings = {
